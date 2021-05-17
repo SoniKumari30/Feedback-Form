@@ -23,7 +23,7 @@ function App() {
                                 </Nav>
                       </Navbar>
                       
-           <div className="ml-auto">//////
+           <div className="ml-auto">
             <Switch>
             <Route path="/" component={FeedbackForm} exact={true} />
             <Route path="/feedback" component={FeedbackTable} />

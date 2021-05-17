@@ -2,8 +2,8 @@ import React from "react"
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
 
 class FeedbackForm extends React.Component{
-        constructor(props){//
-            super(props)////
+        constructor(props){
+            super(props)
             this.state = {
                 text: '',
                 email: '',
