@@ -1,5 +1,5 @@
 import React from "react"
-import { Table, Container } from "react-bootstrap"
+import { Table, Container } from "react-boots//trap"
 
 function FeedbackTable(){////
     const table= JSON.parse(localStorage.getItem('array') || "[undefined,undefined]")
