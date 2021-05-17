@@ -5,7 +5,6 @@ class FeedbackForm extends React.Component{
         constructor(props){
             super(props)
             this.state = {
-                formName: 'Aromatic bar',
                 text: '',
                 email: '',
                 phone: '',
@@ -18,7 +17,6 @@ class FeedbackForm extends React.Component{
      handleSubmit = (e) => {
         e.preventDefault()
         const formData = {
-            formName: this.state.formName,
             text: this.state.text,
             email: this.state.email,
             phone: this.state.phone,
@@ -55,19 +53,9 @@ class FeedbackForm extends React.Component{
                 <Container>
                 <h1 className='pt-5 pb-2'>Form</h1>
                     <Form onSubmit={this.handleSubmit}>
-                        <Row>
-                            <Col>
-                            <input className="ml-0 border-0 text-left text-info mt-3" style={{outline: "none"}}
-                                    value={this.state.formName}
-                                />
-                                <p>we are committed to providing you with the best dining experience possible,
-                                    so we welcome your comments. please fill out these questionnarie Thank you
-                                </p>
-                            </Col>
-                        </Row>
                         <Row className="pt-3">
                             <Col md={6}>
-                                <Form.Label htmlFor="name">Text Field</Form.Label>
+                                <Form.Label htmlFor="name">Text Field *</Form.Label>
                                 <Form.Control 
                                     type="text"
                                     id="text"
@@ -78,7 +66,7 @@ class FeedbackForm extends React.Component{
                                 />
                             </Col>
                             <Col md={6}>
-                            <Form.Label htmlFor="email">Email field</Form.Label>
+                            <Form.Label htmlFor="email">Email field *</Form.Label>
                             <Form.Control 
                                 type="text"
                                 id="email"
@@ -93,7 +81,7 @@ class FeedbackForm extends React.Component{
                         
                         <Row className="pt-3">
                             <Col md={6}>
-                                <Form.Label htmlFor="phone">Phone field</Form.Label>
+                                <Form.Label htmlFor="phone">Phone field *</Form.Label>
                                 <Form.Control 
                                     type="Number"
                                     id="phone"
@@ -106,7 +94,7 @@ class FeedbackForm extends React.Component{
 
                             <Row>
                             <Col>
-                            <Form.Label>Radio Button </Form.Label>
+                            <Form.Label>Radio Button *</Form.Label>
                                 <Form.Check inline label='Excellent' type="radio" id="excellent" name="rating"
                                     checked={this.state.rating==='excellent'}
                                     onChange={()=>{this.handleRadioChange('excellent')}}

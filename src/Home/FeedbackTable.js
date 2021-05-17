@@ -2,7 +2,9 @@ import React from "react"
 import { Table, Container } from "react-bootstrap"
 
 function FeedbackTable(){
-    const table= JSON.parse(localStorage.getItem('array'))
+    const table= JSON.parse(localStorage.getItem('array') || "[undefined,undefined]")
+    const name = table.length >= 1 ? true : false
+    const array = typeof table =='undefined' ? 0 : table
     return (
         <div className="fluid-container" style={{height:"100%", width: "100%",backgroundColor:" red",backgroundImage:"linear-gradient(#F4F8F9,#B7F4C9,#E4C4F9 )"}}>
              <Container>
@@ -10,7 +12,6 @@ function FeedbackTable(){
             <Table striped bordered hover responsive>
             <thead className='thead-dark'>
                     <tr>
-                    <th>Form Name</th>
                     <th>Text field</th>
                     <th>Phone field</th>
                     <th>Email field</th>
@@ -20,10 +21,10 @@ function FeedbackTable(){
                 </thead>
                 <tbody>
                     {
-                        table.map(ele => {
+                        
+                       name ? table.map(ele => {
                             return (
                                 <tr>
-                                    <td>{ele.formName}</td>
                                     <td>{ele.text}</td>
                                     <td>{ele.phone}</td>
                                     <td>{ele.email}</td>
@@ -31,7 +32,7 @@ function FeedbackTable(){
                                     <td>{ele.name}</td>
                                 </tr>
                             )
-                        })
+                        }) : ""
                     }
                 </tbody>
                 </Table>
